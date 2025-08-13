@@ -17,10 +17,10 @@ UTILS_DIR   = $(SRC_DIR)/utils
 SRC_FILES = \
 	$(SRC_DIR)/main.c \
 	$(UTILS_DIR)/ft_split.c \
-	$(UTILS_DIR)/ft_strncmp.c \
-	$(UTILS_DIR)/ft_putstr_fd.c \
 	$(UTILS_DIR)/ft_error.c \
+	$(UTILS_DIR)/ft_strncmp.c \
 	$(PARSE_DIR)/parser.c \
+	$(PARSE_DIR)/is_file_valid.c \
 
 # Object files
 OBJ_FILES   = $(SRC_FILES:.c=.o)

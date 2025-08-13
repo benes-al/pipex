@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:23:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/13 20:50:48 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/13 22:03:17 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 /******************************************************************************/
 
 void	parser(int argc, char **argv);
+int		is_file_valid(char **argv);
 
 /******************************************************************************/
 /*                               UTILS                                        */
@@ -40,7 +41,6 @@ void	parser(int argc, char **argv);
 
 char	**ft_split(char *s, char c);
 int		ft_strncmp(const char *s1, const char *s2);
-void	ft_putstr_fd(char *s, int fd);
 void	ft_error(char *error_message);
 
 #endif

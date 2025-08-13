@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 14:44:32 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/13 20:07:56 by benes-al         ###   ########.fr       */
+/*   Created: 2025/08/13 18:16:57 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/13 21:56:23 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_putstr_fd(char *str, int fd)
+void	ft_error(char *error_message)
 {
-	int	i;
-
-	i = 0;
-	if (!str[i])
-		return ;
-	while (str[i])
-	{
-		write(fd, &str[i], 1);
-		i++;
-	}
+	perror(error_message);
+	exit(EXIT_FAILURE);
 }

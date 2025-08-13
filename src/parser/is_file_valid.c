@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   is_file_valid.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 18:16:57 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/13 20:06:47 by benes-al         ###   ########.fr       */
+/*   Created: 2025/08/13 21:15:07 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/13 22:07:46 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_error(char *error_message)
+int	is_file_valid(char **argv)
 {
-	ft_putstr_fd(error_message, 2);
-	exit(1);
+	int	fd_file1;
+	//int	fd_file2;
+	
+	fd_file1 = open(argv[1], O_RDONLY);
+	if (fd_file1 < 0)
+		ft_error("file1:\n");
+	return (0);
 }

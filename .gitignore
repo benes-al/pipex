@@ -1,7 +1,7 @@
 a.out
-*.excalidraw
-*.h.gch
-.vscode/
-pipex
 *.o
+*.h.gch
+pipex
+.vscode/
 ideias.md
+*.excalidraw
