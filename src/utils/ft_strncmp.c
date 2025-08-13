@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:33:39 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/13 20:54:02 by benes-al         ###   ########.fr       */
+/*   Created: 2025/04/16 19:49:56 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/13 20:26:19 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	main(int argc, char **argv)
+int	ft_strncmp(const char *s1, const char *s2)
 {
-	if (argc != 0)
+	size_t	i;
+
+	i = 0;
+	while ((s1[i] || s2[i]) && (i < 5))
 	{
-		parser(argc, argv);
-		write(1, "great\n", 6);
+		if (s1[i] != s2[i])
+		{
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		}
+		i++;
 	}
-	return(0);
+	return (0);
 }

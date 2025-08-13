@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:23:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/07/31 18:36:01 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/13 20:50:48 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 /*                              INCLUDES                                      */
 /******************************************************************************/
 
+#include <unistd.h>		// fork, pipe, dup2, execve, access, close, read, write
+#include <fcntl.h>		// open
+#include <stdlib.h>     // malloc, free, exit
+#include <stdio.h>      // perror
+#include <sys/wait.h>   // wait, waitpid
+#include <string.h>     // strerror
+
 /******************************************************************************/
 /*                               STRUCTS                                      */
 /******************************************************************************/
@@ -25,8 +32,15 @@
 /*                               PARSER                                       */
 /******************************************************************************/
 
+void	parser(int argc, char **argv);
+
 /******************************************************************************/
 /*                               UTILS                                        */
 /******************************************************************************/
+
+char	**ft_split(char *s, char c);
+int		ft_strncmp(const char *s1, const char *s2);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_error(char *error_message);
 
 #endif

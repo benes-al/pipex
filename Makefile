@@ -11,15 +11,16 @@ CFLAGS      = -Wall -Wextra -Werror -Iincludes -g
 # Source folders
 SRC_DIR     = src
 PARSE_DIR   = $(SRC_DIR)/parser
-SORT_DIR    = $(SRC_DIR)/sorting
 UTILS_DIR   = $(SRC_DIR)/utils
-OPS_DIR     = $(SRC_DIR)/operations
 
 # Source files
 SRC_FILES = \
 	$(SRC_DIR)/main.c \
-	$(PARSE_DIR)/parser.c \
 	$(UTILS_DIR)/ft_split.c \
+	$(UTILS_DIR)/ft_strncmp.c \
+	$(UTILS_DIR)/ft_putstr_fd.c \
+	$(UTILS_DIR)/ft_error.c \
+	$(PARSE_DIR)/parser.c \
 
 # Object files
 OBJ_FILES   = $(SRC_FILES:.c=.o)

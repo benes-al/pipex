@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:33:39 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/13 20:54:02 by benes-al         ###   ########.fr       */
+/*   Created: 2025/04/19 14:44:32 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/13 20:07:56 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	main(int argc, char **argv)
+void	ft_putstr_fd(char *str, int fd)
 {
-	if (argc != 0)
+	int	i;
+
+	i = 0;
+	if (!str[i])
+		return ;
+	while (str[i])
 	{
-		parser(argc, argv);
-		write(1, "great\n", 6);
+		write(fd, &str[i], 1);
+		i++;
 	}
-	return(0);
 }

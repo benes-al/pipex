@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:33:39 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/13 20:54:02 by benes-al         ###   ########.fr       */
+/*   Created: 2025/08/13 17:26:32 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/13 20:52:29 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	main(int argc, char **argv)
+void	parser(int argc, char **argv)
 {
-	if (argc != 0)
-	{
-		parser(argc, argv);
-		write(1, "great\n", 6);
-	}
-	return(0);
+	if (argc != 5)
+		ft_error("invalid number of arguments\n");
+	argv = NULL;
 }
