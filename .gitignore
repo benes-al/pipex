@@ -1,6 +1,7 @@
 a.out
-ideias.excalidraw
+*.excalidraw
 *.h.gch
 .vscode/
 pipex
 *.o
+ideias.md
