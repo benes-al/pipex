@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:33:39 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/14 15:16:56 by benes-al         ###   ########.fr       */
+/*   Created: 2025/04/14 11:56:06 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/14 18:00:01 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	main(int argc, char **argv, char **envp)
+void	ft_bzero(void *s, size_t len)
 {
-	if (argc != 0)
+	size_t			i;
+	unsigned char	*p;
+
+	i = 0;
+	p = (unsigned char *) s;
+	while (i < len)
 	{
-		parser(argc, argv, envp);
-		write(1, "great\n", 6);
+		p[i] = 0;
+		i++;
 	}
-	return(0);
 }

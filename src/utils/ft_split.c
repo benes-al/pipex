@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:28:05 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/13 20:25:47 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/14 15:36:07 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static char	**ft_free(char **strs, int i)
 	return (NULL);
 }
 
-char	**ft_split(char *s, char c)
+char	**ft_split(char *str, char delimiter)
 {
 	char	**strs;
 	int		i;
@@ -74,19 +74,19 @@ char	**ft_split(char *s, char c)
 
 	i = -1;
 	j = 0;
-	if (!s)
+	if (!str)
 		return (NULL);
-	strs = malloc(sizeof(char *) * (ft_wrdcnt(s, c) + 1));
+	strs = malloc(sizeof(char *) * (ft_wrdcnt(str, delimiter) + 1));
 	if (!strs)
 		return (NULL);
-	while (++i < ft_wrdcnt(s, c))
+	while (++i < ft_wrdcnt(str, delimiter))
 	{
-		while (s[j] == c && s[j])
+		while (str[j] == delimiter && str[j])
 			j++;
-		strs[i] = ft_genwrd(&s[j], c);
+		strs[i] = ft_genwrd(&str[j], delimiter);
 		if (!strs[i])
 			return (ft_free(strs, i));
-		while (s[j] != c && s[j])
+		while (str[j] != delimiter && str[j])
 			j++;
 	}
 	strs[i] = 0;

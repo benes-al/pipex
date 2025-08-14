@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   is_file1_valid.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:33:39 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/14 15:16:56 by benes-al         ###   ########.fr       */
+/*   Created: 2025/08/13 21:15:07 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/14 18:56:12 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	main(int argc, char **argv, char **envp)
+bool	is_file1_valid(char *argv)
 {
-	if (argc != 0)
-	{
-		parser(argc, argv, envp);
-		write(1, "great\n", 6);
-	}
-	return(0);
+	int	fd_file1;
+	
+	fd_file1 = open(argv, O_RDONLY);
+	if (fd_file1 == -1)
+		return (0);
+	return (1);
 }

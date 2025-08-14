@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   envp.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 16:19:32 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/13 20:26:35 by benes-al         ###   ########.fr       */
+/*   Created: 2025/04/17 15:10:57 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/14 17:57:57 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	envp(int argc, char **argv, char **envp)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	i;
-	char *PATH;
-	char **PATHS;
-	
-	PATH = NULL;
-	PATHS = NULL;
-	i = 0;
-	while (envp[i])
-	{
-		if (ft_strncmp("PATH=", envp[i]) == 0)
-			PATH = envp[i] + 5;
-		i++;
-	}
-	PATHS = ft_split(PATH, ':');
-	i = 0;
-	while (PATHS[i])
-	{
-		printf("%s\n", PATHS[i]);
-		i++;
-	}
+	void	*cal;
+
+	if (size && nmemb > SIZE_MAX / size)
+		return (NULL);
+	cal = malloc(size * nmemb);
+	if (!cal)
+		return (NULL);
+	ft_bzero(cal, (nmemb * size));
+	return (cal);
 }

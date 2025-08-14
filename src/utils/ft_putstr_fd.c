@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_file_valid.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 21:15:07 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/13 22:07:46 by benes-al         ###   ########.fr       */
+/*   Created: 2025/04/19 14:44:32 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/14 12:38:58 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	is_file_valid(char **argv)
+void	ft_putstr_fd(char *str)
 {
-	int	fd_file1;
-	//int	fd_file2;
-	
-	fd_file1 = open(argv[1], O_RDONLY);
-	if (fd_file1 < 0)
-		ft_error("file1:\n");
-	return (0);
+	int	i;
+
+	i = 0;
+	if (!str[i])
+		return ;
+	while (str[i])
+	{
+		write(2, &str[i], 1);
+		i++;
+	}
+	write(2, "\n", 1);
 }

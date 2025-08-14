@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:33:39 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/14 15:16:56 by benes-al         ###   ########.fr       */
+/*   Created: 2025/04/24 18:20:36 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/14 17:58:24 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	main(int argc, char **argv, char **envp)
+size_t	ft_strlen(const char *str)
 {
-	if (argc != 0)
+	size_t	i;
+
+	i = 0;
+	while (str[i])
 	{
-		parser(argc, argv, envp);
-		write(1, "great\n", 6);
+		i++;
 	}
-	return(0);
+	return (i);
 }

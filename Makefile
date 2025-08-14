@@ -17,10 +17,18 @@ UTILS_DIR   = $(SRC_DIR)/utils
 SRC_FILES = \
 	$(SRC_DIR)/main.c \
 	$(UTILS_DIR)/ft_split.c \
-	$(UTILS_DIR)/ft_error.c \
+	$(UTILS_DIR)/ft_strjoin.c \
+	$(UTILS_DIR)/ft_parse_error.c \
+	$(UTILS_DIR)/ft_putstr_fd.c \
 	$(UTILS_DIR)/ft_strncmp.c \
+	$(UTILS_DIR)/ft_calloc.c \
+	$(UTILS_DIR)/ft_strlen.c \
+	$(UTILS_DIR)/ft_sys_error.c \
+	$(UTILS_DIR)/ft_bzero.c \
 	$(PARSE_DIR)/parser.c \
-	$(PARSE_DIR)/is_file_valid.c \
+	$(PARSE_DIR)/is_command_valid.c \
+	$(PARSE_DIR)/is_file1_valid.c \
+	$(PARSE_DIR)/is_file2_valid.c \
 
 # Object files
 OBJ_FILES   = $(SRC_FILES:.c=.o)
