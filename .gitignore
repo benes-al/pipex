@@ -2,6 +2,7 @@ a.out
 *.o
 *.h.gch
 file1
+file2
 pipex
 .vscode/
 ideias.md
