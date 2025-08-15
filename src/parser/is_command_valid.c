@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 14:46:31 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/14 20:26:47 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/15 18:44:40 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,25 @@ char	**get_paths(char **envp)
 		}
 		i++;
 	}
+	if (!full_path)
+		ft_sys_error("PATH not found in envp");
 	paths = ft_split(full_path, ':');
 	return (paths);
 }
 
-char	*split_input_command(char *argv)
+char	**split_input_command(char *argv)
 {
 	char **command_args;
 	
 	command_args = ft_split(argv, ' ');
-	if (!command_args || !command_args[0])
-		ft_parse_error("no cmd1 provided");
-	return (command_args[0]);
+	if (!command_args)
+		ft_sys_error("split_input_command");
+	if (!command_args || !command_args[0] || command_args[0][0] == '\0')
+	{	
+		ft_free_args(command_args);
+		return (NULL);
+	}
+	return (command_args);
 }
 
 char	*join_command_to_path(char *path, char *command)
@@ -51,14 +58,6 @@ char	*join_command_to_path(char *path, char *command)
 	
 	temp = ft_strjoin(path, "/");
 	command_path = ft_strjoin(temp, command);
-
-	#if 1
-
-		printf("%s\n", command_path);
-
-	#endif
-
-	
 	return (command_path);
 }
 
@@ -83,11 +82,18 @@ bool	is_command_executable(char **paths, char *command)
 bool	is_command_valid(char *argv, char **envp)
 {
 	char	**paths;
-	char	*command;
+	char	**command;
 	
 	paths = get_paths(envp);
+	if (!paths)	
+		ft_sys_error("get_paths");	
 	command = split_input_command(argv);
-	if (!is_command_executable(paths, command))
+	if (!command)
+	{
+		ft_free_args(paths);
+		ft_parse_error("no command provided or empty");
+	}
+	if (!is_command_executable(paths, command[0]))
 		return (0);
 	return (1);
 }

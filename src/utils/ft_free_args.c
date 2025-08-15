@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_error.c                                   :+:      :+:    :+:   */
+/*   ft_free_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 12:19:27 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/15 15:32:28 by benes-al         ###   ########.fr       */
+/*   Created: 2025/08/15 12:20:23 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/15 18:34:51 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_parse_error(char *error_message)
+void	ft_free_args(char **argv)
 {
-	ft_putstr_fd(error_message);
-	exit(EXIT_FAILURE);
+	int	i;
+
+	i = 0;
+	if (!argv)
+		return ;
+	while (argv[i])
+	{	
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
 }

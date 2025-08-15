@@ -3,6 +3,7 @@ a.out
 *.h.gch
 file1
 file2
+*.txt
 pipex
 .vscode/
 ideias.md

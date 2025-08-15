@@ -25,6 +25,7 @@ SRC_FILES = \
 	$(UTILS_DIR)/ft_strlen.c \
 	$(UTILS_DIR)/ft_sys_error.c \
 	$(UTILS_DIR)/ft_bzero.c \
+	$(UTILS_DIR)/ft_free_args.c \
 	$(PARSE_DIR)/parser.c \
 	$(PARSE_DIR)/is_command_valid.c \
 	$(PARSE_DIR)/is_file1_valid.c \
