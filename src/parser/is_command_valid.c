@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 14:46:31 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/16 18:13:33 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/16 23:55:46 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char	*join_command_to_path(char *path, char *command)
 	
 	temp = ft_strjoin(path, "/");
 	command_path = ft_strjoin(temp, command);
+	free(temp);
 	return (command_path);
 }
 
