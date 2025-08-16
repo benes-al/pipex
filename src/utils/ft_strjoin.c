@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 10:27:31 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/14 17:03:39 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/16 17:43:31 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	j;
 	char	*s;
 
-	if (!s1)
+	if (!s1 || !s2)
 		return (NULL);
 	i = 0;
 	j = 0;

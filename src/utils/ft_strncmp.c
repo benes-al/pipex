@@ -6,22 +6,22 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 19:49:56 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/14 15:22:23 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/16 14:39:21 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	ft_strncmp(const char *str1, const char *str2)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while ((str1[i] || str2[i]) && (i < 5))
+	while ((s1[i] || s2[i]) && (i < n))
 	{
-		if (str1[i] != str2[i])
+		if (s1[i] != s2[i])
 		{
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		}
 		i++;
 	}

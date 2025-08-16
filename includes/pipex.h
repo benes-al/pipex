@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:23:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/15 12:47:52 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/16 14:39:42 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ bool	is_command_valid(char *argv, char **envp);
 
 char	**ft_split(char *str, char delimiter);
 char	*ft_strjoin(char const *s1, char const *s2);
-int		ft_strncmp(const char *str1, const char *str2);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putstr_fd(char *str);
 void	ft_sys_error(char *error_message);
 void	ft_parse_error(char *error_message);
