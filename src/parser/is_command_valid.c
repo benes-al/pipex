@@ -6,11 +6,17 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 14:46:31 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/17 23:04:23 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/18 00:23:22 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+
+static void	ft_free_all(char **paths, char **command)
+{
+	ft_free_args(paths);
+	ft_free_args(command);		
+}
 
 char	**get_paths(char **envp)
 {
@@ -63,10 +69,8 @@ void	is_command_valid(char *argv, char **envp)
 	if (!is_command_executable(path_found))
 	{
 		ft_mimic_sys_error(command[0], ": permission denied\n");
-		ft_free_args(paths);
-		ft_free_args(command);
+		ft_free_all(paths, command);
 		exit(126);
 	}
-	ft_free_args(paths);
-	ft_free_args(command);
+	ft_free_all(paths, command);
 }
