@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:23:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/17 12:03:03 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/17 22:46:11 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,24 +53,32 @@ typedef struct s_pipex_data
 /*                               PARSER                                       */
 /******************************************************************************/
 
-void	parser(int argc, char **argv, char **envp);
-bool	is_file1_valid(char *argv);
-bool	is_file2_valid(char *argv);
-bool	is_command_valid(char *argv, char **envp);
+bool	is_command_executable(char *path_found);
+char	*is_command_found(char **paths, char **command);
+void	is_command_valid(char *argv, char **envp);
+void	is_file1_valid(char *argv);
+void	is_file2_valid(char *argv);
+void	parser(char **argv, char **envp);
 
 /******************************************************************************/
 /*                               UTILS                                        */
 /******************************************************************************/
 
+void	ft_sys_error(char *error_message);
+void	ft_mimic_sys_error(char *command, char *error_message);
+void	ft_logic_error(char *error_message);
+void	ft_free_args(char **argv);
+
+/******************************************************************************/
+/*                               HELPERS                                      */
+/******************************************************************************/
+
+void	ft_bzero(void *s, size_t len);
+void	*ft_calloc(size_t nmemb, size_t size);
+void	ft_putstr_fd(char *str, int fd);
 char	**ft_split(char *str, char delimiter);
 char	*ft_strjoin(char const *s1, char const *s2);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	ft_putstr_fd(char *str);
-void	ft_sys_error(char *error_message);
-void	ft_parse_error(char *error_message);
-void	*ft_calloc(size_t nmemb, size_t size);
 size_t	ft_strlen(const char *str);
-void	ft_bzero(void *s, size_t len);
-void	ft_free_args(char **argv);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

@@ -10,26 +10,32 @@ CFLAGS      = -Wall -Wextra -Werror -Iincludes -g
 
 # Source folders
 SRC_DIR     = src
+HELPE_DIR	= $(SRC_DIR)/helpers
 PARSE_DIR   = $(SRC_DIR)/parser
+PIPE__DIR	= $(SRC_DIR)/pipe
 UTILS_DIR   = $(SRC_DIR)/utils
+MAIN__DIR	= $(SRC_DIR)
 
 # Source files
 SRC_FILES = \
-	$(SRC_DIR)/main.c \
-	$(UTILS_DIR)/ft_split.c \
-	$(UTILS_DIR)/ft_strjoin.c \
-	$(UTILS_DIR)/ft_parse_error.c \
-	$(UTILS_DIR)/ft_putstr_fd.c \
-	$(UTILS_DIR)/ft_strncmp.c \
-	$(UTILS_DIR)/ft_calloc.c \
-	$(UTILS_DIR)/ft_strlen.c \
-	$(UTILS_DIR)/ft_sys_error.c \
-	$(UTILS_DIR)/ft_bzero.c \
-	$(UTILS_DIR)/ft_free_args.c \
-	$(PARSE_DIR)/parser.c \
+	$(HELPE_DIR)/ft_bzero.c \
+	$(HELPE_DIR)/ft_calloc.c \
+	$(HELPE_DIR)/ft_putstr_fd.c \
+	$(HELPE_DIR)/ft_split.c \
+	$(HELPE_DIR)/ft_strjoin.c \
+	$(HELPE_DIR)/ft_strlen.c \
+	$(HELPE_DIR)/ft_strncmp.c \
+	$(PARSE_DIR)/is_command_executable.c \
+	$(PARSE_DIR)/is_command_found.c \
 	$(PARSE_DIR)/is_command_valid.c \
 	$(PARSE_DIR)/is_file1_valid.c \
 	$(PARSE_DIR)/is_file2_valid.c \
+	$(PARSE_DIR)/parser.c \
+	$(UTILS_DIR)/ft_error.c \
+	$(UTILS_DIR)/ft_free_args.c \
+	$(UTILS_DIR)/init_t_command.c \
+	$(UTILS_DIR)/init_t_pipex_data.c \
+	$(MAIN__DIR)/main.c \
 
 # Object files
 OBJ_FILES   = $(SRC_FILES:.c=.o)
