@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   init_t_pipex_data.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 17:26:32 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/17 00:15:18 by benes-al         ###   ########.fr       */
+/*   Created: 2025/08/17 00:47:33 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/17 12:22:12 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	parser(int argc, char **argv, char **envp)
+void	init_t_pipex_data(t_pipex_data	*pipex)
 {
-	if (argc != 5)
-		ft_parse_error("invalid number of arguments");
-	if (!is_file1_valid(argv[1]))
-		ft_sys_error("file1");
-	if (!is_command_valid(argv[2], envp))
-		ft_sys_error("cmd1");
-	if (!is_command_valid(argv[3], envp))
-		ft_sys_error("cmd2");
-	if (!is_file2_valid(argv[4]))
-		ft_sys_error("file2");
-	// print with perror if execv returns -1 to check if the flag is invalid
+	pipex->file1 = 0;
+	pipex->file2 = 0;
+	pipex->pipe_fd[0] = 0;
+	pipex->pipe_fd[1] = 0;
+	pipex->pid1 = -1;
+	pipex->pid2 = -1;
+	pipex->envp = NULL;
+	pipex->cmd1.full_command_path = NULL;
+	pipex->cmd1.full_command = NULL;
+	pipex->cmd2.full_command_path = NULL;
+	pipex->cmd2.full_command = NULL;
+	pipex->paths = NULL;
 }

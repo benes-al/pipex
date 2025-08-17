@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:23:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/16 14:39:42 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/17 12:03:03 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,25 @@
 /******************************************************************************/
 /*                               STRUCTS                                      */
 /******************************************************************************/
+
+typedef struct s_command
+{
+	char	*full_command_path;	// Full path to the command (/usr/bin/ls)
+	char	**full_command;		// Command and its arguments ({"ls", "-l", NULL})
+}	t_command;
+
+typedef struct s_pipex_data
+{
+	int			file1;			// File descriptor for the first file
+	int			file2;			// File descriptor for the second file
+	int			pipe_fd[2];		// File descriptors for the pipe
+	pid_t		pid1;			// Process ID for child processes
+	pid_t		pid2;			// Process ID for child processes
+	char		**envp;			// Environment variables
+	t_command 	cmd1;			// Struckt with command and its full path
+	t_command 	cmd2;			// Struckt with command and its full path
+	char		**paths;		// split paths for execv()
+}	t_pipex_data;
 
 /******************************************************************************/
 /*                               PARSER                                       */
