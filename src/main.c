@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 18:33:39 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/18 17:09:13 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/18 17:43:14 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv, char **envp)
 {
-	//int	pipefd[2];
 	t_pipex_data	pipex;
+	//int	pipefd[2];
 	
 	if (argc != 5)
 	ft_logic_error("Usage: ./pipex file1 cmd1 cmd2 file2\n");

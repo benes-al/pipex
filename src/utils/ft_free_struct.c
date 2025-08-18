@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 10:56:51 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/18 16:58:58 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/18 17:47:44 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_free_args(char **argv)
 	if (!argv)
 		return ;
 	while (argv[i])
-	{	
+	{
 		free(argv[i]);
 		i++;
 	}
@@ -44,7 +44,7 @@ void	ft_free_struct(t_pipex_data	*pipex)
 	if (pipex->cmd2_path)
 		free(pipex->cmd2_path);
 	if (pipex->cmd1)
-		ft_free_args(pipex->cmd1);	
+		ft_free_args(pipex->cmd1);
 	if (pipex->cmd2)
 		ft_free_args(pipex->cmd2);
 }

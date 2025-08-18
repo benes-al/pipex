@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 21:15:07 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/18 15:25:16 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/18 17:43:45 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	is_file1_valid(char *argv, t_pipex_data *pipex)
 {
 	int	fd_file1;
-	
+
 	fd_file1 = open(argv, O_RDONLY);
 	if (fd_file1 == -1)
 	{

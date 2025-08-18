@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:23:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/18 16:26:43 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/18 17:42:35 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 /*                              INCLUDES                                      */
 /******************************************************************************/
 
-#include <unistd.h>		// fork, pipe, dup2, execve, access, close, read, write
-#include <fcntl.h>		// open
-#include <stdlib.h>     // malloc, free, exit
-#include <stdio.h>      // perror
-#include <sys/wait.h>   // wait, waitpid
-#include <string.h>     // strerror
-#include <stdbool.h>	// bool
-#include <stdint.h>		// size_t
+# include <unistd.h>	// fork, pipe, dup2, execve, access, close, read, write
+# include <fcntl.h>		// open
+# include <stdlib.h>	// malloc, free, exit
+# include <stdio.h>		// perror
+# include <sys/wait.h>	// wait, waitpid
+# include <string.h>	// strerror
+# include <stdbool.h>	// bool
+# include <stdint.h>	// size_t
 
 /******************************************************************************/
 /*                               STRUCTS                                      */
