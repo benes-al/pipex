@@ -25,16 +25,16 @@ SRC_FILES = \
 	$(HELPE_DIR)/ft_strjoin.c \
 	$(HELPE_DIR)/ft_strlen.c \
 	$(HELPE_DIR)/ft_strncmp.c \
-	$(PARSE_DIR)/is_command_executable.c \
-	$(PARSE_DIR)/is_command_found.c \
-	$(PARSE_DIR)/is_command_valid.c \
+	$(PARSE_DIR)/get_all_paths.c \
+	$(PARSE_DIR)/get_cmd_path.c \
+	$(PARSE_DIR)/get_cmd.c \
+	$(PARSE_DIR)/is_cmd_valid.c \
 	$(PARSE_DIR)/is_file1_valid.c \
 	$(PARSE_DIR)/is_file2_valid.c \
 	$(PARSE_DIR)/parser.c \
 	$(UTILS_DIR)/ft_error.c \
-	$(UTILS_DIR)/ft_free_args.c \
-	$(UTILS_DIR)/init_t_command.c \
-	$(UTILS_DIR)/init_t_pipex_data.c \
+	$(UTILS_DIR)/ft_free_struct.c \
+	$(UTILS_DIR)/init_struct.c \
 	$(MAIN__DIR)/main.c \
 
 # Object files

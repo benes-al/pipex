@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_command_executable.c                            :+:      :+:    :+:   */
+/*   init_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/17 21:01:11 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/17 21:39:41 by benes-al         ###   ########.fr       */
+/*   Created: 2025/08/17 00:47:33 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/18 17:05:00 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <pipex.h>
+#include "pipex.h"
 
-bool	is_command_executable(char *path_found)
+void	init_struct(t_pipex_data *pipex)
 {
-	if (access(path_found, X_OK) == 0)
-	{
-		free(path_found);	
-		return (1);
-	}
-	free(path_found);
-	return(0);
+	pipex->fd_file1 = -1;
+	pipex->fd_file2 = -1;
+	pipex->pipe_fd[0] = -1;
+	pipex->pipe_fd[1] = -1;
+	pipex->pid1 = -1;
+	pipex->pid2 = -1;
+	pipex->envp = NULL;
+	pipex->all_paths = NULL;
+	pipex->cmd1_path = NULL;
+	pipex->cmd2_path = NULL;
+	pipex->cmd1 = NULL;
+	pipex->cmd2 = NULL;
 }

@@ -6,11 +6,11 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 22:27:23 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/17 22:50:20 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/18 13:04:27 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <pipex.h>
+#include "pipex.h"
 
 void	ft_sys_error(char *error_message)
 {

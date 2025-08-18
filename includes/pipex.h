@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:23:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/17 22:46:11 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:26:43 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,32 @@
 /*                               STRUCTS                                      */
 /******************************************************************************/
 
-typedef struct s_command
-{
-	char	*full_command_path;	// Full path to the command (/usr/bin/ls)
-	char	**full_command;		// Command and its arguments ({"ls", "-l", NULL})
-}	t_command;
-
 typedef struct s_pipex_data
 {
-	int			file1;			// File descriptor for the first file
-	int			file2;			// File descriptor for the second file
+	int			fd_file1;		// File descriptor for the first file
+	int			fd_file2;		// File descriptor for the second file
 	int			pipe_fd[2];		// File descriptors for the pipe
 	pid_t		pid1;			// Process ID for child processes
 	pid_t		pid2;			// Process ID for child processes
 	char		**envp;			// Environment variables
-	t_command 	cmd1;			// Struckt with command and its full path
-	t_command 	cmd2;			// Struckt with command and its full path
-	char		**paths;		// split paths for execv()
+	char		**all_paths;	// All envp paths
+	char		*cmd1_path;		// Full path to the command
+	char		*cmd2_path;		// Full path to the command
+	char		**cmd1;			// Command and its arguments
+	char		**cmd2;			// Command and its arguments
 }	t_pipex_data;
 
 /******************************************************************************/
 /*                               PARSER                                       */
 /******************************************************************************/
 
-bool	is_command_executable(char *path_found);
-char	*is_command_found(char **paths, char **command);
-void	is_command_valid(char *argv, char **envp);
-void	is_file1_valid(char *argv);
-void	is_file2_valid(char *argv);
-void	parser(char **argv, char **envp);
+char	**get_all_paths(t_pipex_data *pipex);
+void	is_cmd_valid(char *argv, t_pipex_data *pipex, int cmd_index);
+char	*get_cmd_path(t_pipex_data *pipex, char **cmd);
+char	**get_cmd(char *argv, t_pipex_data *pipex);
+void	is_file1_valid(char *argv, t_pipex_data *pipex);
+void	is_file2_valid(char *argv, t_pipex_data *pipex);
+void	parser(char **argv, t_pipex_data *pipex);
 
 /******************************************************************************/
 /*                               UTILS                                        */
@@ -67,7 +64,8 @@ void	parser(char **argv, char **envp);
 void	ft_sys_error(char *error_message);
 void	ft_mimic_sys_error(char *command, char *error_message);
 void	ft_logic_error(char *error_message);
-void	ft_free_args(char **argv);
+void	ft_free_struct(t_pipex_data	*pipex);
+void	init_struct(t_pipex_data *pipex);
 
 /******************************************************************************/
 /*                               HELPERS                                      */
