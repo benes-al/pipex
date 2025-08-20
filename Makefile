@@ -11,7 +11,7 @@ CFLAGS      = -Wall -Wextra -Werror -Iincludes -g
 # Source folders
 SRC_DIR     = src
 HELPE_DIR	= $(SRC_DIR)/helpers
-PARSE_DIR   = $(SRC_DIR)/parser
+PROGR_DIR   = $(SRC_DIR)/program
 PIPE__DIR	= $(SRC_DIR)/pipe
 UTILS_DIR   = $(SRC_DIR)/utils
 MAIN__DIR	= $(SRC_DIR)
@@ -25,12 +25,16 @@ SRC_FILES = \
 	$(HELPE_DIR)/ft_strjoin.c \
 	$(HELPE_DIR)/ft_strlen.c \
 	$(HELPE_DIR)/ft_strncmp.c \
-	$(PARSE_DIR)/get_all_paths.c \
-	$(PARSE_DIR)/get_cmd_path.c \
-	$(PARSE_DIR)/get_cmd.c \
-	$(PARSE_DIR)/is_cmd_valid.c \
-	$(PARSE_DIR)/is_file1_valid.c \
-	$(PARSE_DIR)/is_file2_valid.c \
+	$(PROGR_DIR)/child1_process.c \
+	$(PROGR_DIR)/child2_process.c \
+	$(PROGR_DIR)/ft_wait.c \
+	$(PROGR_DIR)/get_all_paths.c \
+	$(PROGR_DIR)/get_cmd_path.c \
+	$(PROGR_DIR)/get_cmd.c \
+	$(PROGR_DIR)/is_cmd1_valid.c \
+	$(PROGR_DIR)/is_cmd2_valid.c \
+	$(PROGR_DIR)/is_file1_valid.c \
+	$(PROGR_DIR)/is_file2_valid.c \
 	$(UTILS_DIR)/ft_error.c \
 	$(UTILS_DIR)/ft_free_struct.c \
 	$(UTILS_DIR)/init_struct.c \
