@@ -31,7 +31,6 @@ SRC_FILES = \
 	$(PARSE_DIR)/is_cmd_valid.c \
 	$(PARSE_DIR)/is_file1_valid.c \
 	$(PARSE_DIR)/is_file2_valid.c \
-	$(PARSE_DIR)/parser.c \
 	$(UTILS_DIR)/ft_error.c \
 	$(UTILS_DIR)/ft_free_struct.c \
 	$(UTILS_DIR)/init_struct.c \

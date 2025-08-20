@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:23:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/18 17:42:35 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/20 15:02:07 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,11 @@ typedef struct s_pipex_data
 /******************************************************************************/
 
 char	**get_all_paths(t_pipex_data *pipex);
-void	is_cmd_valid(char *argv, t_pipex_data *pipex, int cmd_index);
 char	*get_cmd_path(t_pipex_data *pipex, char **cmd);
 char	**get_cmd(char *argv, t_pipex_data *pipex);
+void	is_cmd_valid(char *argv, t_pipex_data *pipex, int cmd_index);
 void	is_file1_valid(char *argv, t_pipex_data *pipex);
 void	is_file2_valid(char *argv, t_pipex_data *pipex);
-void	parser(char **argv, t_pipex_data *pipex);
 
 /******************************************************************************/
 /*                               UTILS                                        */

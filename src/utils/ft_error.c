@@ -6,15 +6,15 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 22:27:23 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/18 13:04:27 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/19 14:48:38 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_sys_error(char *error_message)
+void	ft_sys_error(char *command)
 {
-	perror(error_message);
+	perror(command);
 	exit(EXIT_FAILURE);
 }
 
