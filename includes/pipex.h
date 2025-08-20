@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:23:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/20 16:09:53 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/20 21:25:48 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ typedef struct s_pipex_data
 
 void	child1_process(char **argv, t_pipex_data *pipex);
 void	child2_process(char **argv, t_pipex_data *pipex);
-int		ft_wait(t_pipex_data *pipex);
+int		ft_wait(int pid1, int pid2);
 char	**get_all_paths(t_pipex_data *pipex);
 char	*get_cmd_path(t_pipex_data *pipex, char **cmd);
 char	**get_cmd(char *argv, t_pipex_data *pipex);
-void	is_cmd1_valid(char *argv, t_pipex_data *pipex);
-void	is_cmd2_valid(char *argv, t_pipex_data *pipex);
-void	is_file1_valid(char *argv, t_pipex_data *pipex);
-void	is_file2_valid(char *argv, t_pipex_data *pipex);
+void	parse_and_store_cmd1(char *argv, t_pipex_data *pipex);
+void	parse_and_store_cmd2(char *argv, t_pipex_data *pipex);
+void	parse_and_open_file1(char *argv, t_pipex_data *pipex);
+void	parse_and_open_file2(char *argv, t_pipex_data *pipex);
 
 /******************************************************************************/
 /*                               UTILS                                        */

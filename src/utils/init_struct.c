@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 00:47:33 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/20 15:03:28 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:41:51 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	init_struct(t_pipex_data *pipex)
 	pipex->fd_file2 = -1;
 	pipex->pipe_fd[0] = -1;
 	pipex->pipe_fd[1] = -1;
-	pipex->pid1 = -1;
-	pipex->pid2 = -1;
 	pipex->envp = NULL;
 	pipex->all_paths = NULL;
 	pipex->cmd1_path = NULL;

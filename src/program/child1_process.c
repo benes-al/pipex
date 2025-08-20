@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:33:44 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/20 16:41:29 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/20 22:10:25 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 void	child1_process(char **argv, t_pipex_data *pipex)
 {
 	close(pipex->pipe_fd[0]);
-	is_file1_valid(argv[1], pipex);
+	parse_and_open_file1(argv[1], pipex);
+	dup2(pipex->pipe_fd[1], STDOUT_FILENO);
+	close(pipex->pipe_fd[1]);
 	dup2(pipex->fd_file1, STDIN_FILENO);
 	close(pipex->fd_file1);
-	dup2(pipex->pipe_fd[1], STDOUT_FILENO);
-	close(pipex->pipe_fd[0]);
-	close(pipex->pipe_fd[1]);
-	is_cmd1_valid(argv[2], pipex);
-	if (execv(pipex->cmd1_path, pipex->cmd1) == -1)
+	parse_and_store_cmd1(argv[2], pipex);
+	if (execve(pipex->cmd1_path, pipex->cmd1, pipex->envp) == -1)
 	{
-		ft_sys_error("execv");
 		ft_free_struct(pipex);
+		ft_sys_error("execv");
 	}
 }

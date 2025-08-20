@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_file2_valid.c                                   :+:      :+:    :+:   */
+/*   parse_and_open_file2.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 21:15:07 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/18 17:43:44 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/20 21:15:29 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	is_file2_valid(char *argv, t_pipex_data *pipex)
+void	parse_and_open_file2(char *argv, t_pipex_data *pipex)
 {
 	int	fd_file2;
 

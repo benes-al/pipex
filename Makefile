@@ -31,10 +31,10 @@ SRC_FILES = \
 	$(PROGR_DIR)/get_all_paths.c \
 	$(PROGR_DIR)/get_cmd_path.c \
 	$(PROGR_DIR)/get_cmd.c \
-	$(PROGR_DIR)/is_cmd1_valid.c \
-	$(PROGR_DIR)/is_cmd2_valid.c \
-	$(PROGR_DIR)/is_file1_valid.c \
-	$(PROGR_DIR)/is_file2_valid.c \
+	$(PROGR_DIR)/parse_and_open_file1.c \
+	$(PROGR_DIR)/parse_and_open_file2.c \
+	$(PROGR_DIR)/parse_and_store_cmd1.c \
+	$(PROGR_DIR)/parse_and_store_cmd2.c \
 	$(UTILS_DIR)/ft_error.c \
 	$(UTILS_DIR)/ft_free_struct.c \
 	$(UTILS_DIR)/init_struct.c \
@@ -62,5 +62,11 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+valgrind: $(NAME)
+	@echo "$(YELLOW)Valgrind Report$(RESET)"
+	@valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes \
+	--track-origins=yes --trace-children=yes \
+	./$(NAME) infile wc "cat -e" outfile
 
 .PHONY: all clean fclean re
