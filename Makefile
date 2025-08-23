@@ -20,6 +20,7 @@ MAIN__DIR	= $(SRC_DIR)
 SRC_FILES = \
 	$(HELPE_DIR)/ft_bzero.c \
 	$(HELPE_DIR)/ft_calloc.c \
+	$(HELPE_DIR)/ft_isallspaces.c \
 	$(HELPE_DIR)/ft_putstr_fd.c \
 	$(HELPE_DIR)/ft_split.c \
 	$(HELPE_DIR)/ft_strjoin.c \

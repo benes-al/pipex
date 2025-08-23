@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:33:44 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/20 22:10:25 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/22 10:24:51 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	child1_process(char **argv, t_pipex_data *pipex)
 {
-	close(pipex->pipe_fd[0]);
 	parse_and_open_file1(argv[1], pipex);
+	close(pipex->pipe_fd[0]);
 	dup2(pipex->pipe_fd[1], STDOUT_FILENO);
 	close(pipex->pipe_fd[1]);
 	dup2(pipex->fd_file1, STDIN_FILENO);

@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_struct.c                                      :+:      :+:    :+:   */
+/*   ft_isallspaces.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/17 00:47:33 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/21 16:18:29 by benes-al         ###   ########.fr       */
+/*   Created: 2025/04/13 13:32:52 by benes-al          #+#    #+#             */
+/*   Updated: 2025/08/22 12:45:43 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	init_struct(t_pipex_data *pipex)
+bool	ft_isallspaces(char *argv)
 {
-	pipex->fd_file1 = -1;
-	pipex->fd_file2 = -1;
-	pipex->pipe_fd[0] = -1;
-	pipex->pipe_fd[1] = -1;
-	pipex->envp = NULL;
-	pipex->all_paths = NULL;
-	pipex->cmd1_path = NULL;
-	pipex->cmd2_path = NULL;
-	pipex->cmd1 = NULL;
-	pipex->cmd2 = NULL;
+	int	i;
+
+	i = 0;
+	if (argv[0] == '\0')
+		return (0);
+	while (argv[i])
+	{
+		if ((argv[i] < 9 || argv[i] > 13) && argv[i] != 32)
+			return (0);
+		i++;
+	}
+	return (1);
 }

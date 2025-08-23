@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 21:05:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/18 17:47:19 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/22 12:04:03 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	is_cmd_empty(t_pipex_data *pipex, char **cmd)
 	if (!cmd[0] || !cmd[0][0])
 	{
 		ft_free_struct(pipex);
-		ft_mimic_sys_error("", ": command not found\n");
-		exit(127);
+		ft_mimic_sys_error("permission denied:", "");
+		exit(126);
 	}
 }
 
@@ -54,7 +54,7 @@ char	*get_cmd_path(t_pipex_data *pipex, char **cmd)
 		cmd_path = NULL;
 		i++;
 	}
-	ft_mimic_sys_error(cmd[0], ": command not found\n");
+	ft_mimic_sys_error("command not found: ", cmd[0]);
 	ft_free_struct(pipex);
 	exit(127);
 	return (NULL);

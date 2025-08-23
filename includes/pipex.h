@@ -6,7 +6,7 @@
 /*   By: benes-al <benes-al@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:23:46 by benes-al          #+#    #+#             */
-/*   Updated: 2025/08/20 21:25:48 by benes-al         ###   ########.fr       */
+/*   Updated: 2025/08/22 12:29:42 by benes-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	parse_and_open_file2(char *argv, t_pipex_data *pipex);
 /*                               UTILS                                        */
 /******************************************************************************/
 
-void	ft_sys_error(char *error_message);
-void	ft_mimic_sys_error(char *command, char *error_message);
+void	ft_sys_error(char *arg);
+void	ft_mimic_sys_error(char *arg, char *error_message);
 void	ft_logic_error(char *error_message);
 void	ft_free_struct(t_pipex_data	*pipex);
 void	init_struct(t_pipex_data *pipex);
@@ -76,6 +76,7 @@ void	init_struct(t_pipex_data *pipex);
 
 void	ft_bzero(void *s, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
+bool	ft_isallspaces(char *argv);
 void	ft_putstr_fd(char *str, int fd);
 char	**ft_split(char *str, char delimiter);
 char	*ft_strjoin(char const *s1, char const *s2);
